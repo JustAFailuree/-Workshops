@@ -10,19 +10,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT Id,Nazwa, Haslo, Rola FROM pracownicy WHERE Nazwa = '$login' AND Haslo = '$haslo'";
-            $result = $conn->query($sql);
 
-            if ($result->num_rows == 1) {
-                $row = $result->fetch_assoc();
-                $_SESSION['role'] = $row['Rola'];
-                $_SESSION['id'] = $row['Id'];
-                echo '<script> console.log("zalogowano") </script>';
-                header('Location: Grafik.php');
-                exit();
-            } else {
-        
-                echo '<script> console.log("Błędne dane logowania!")</script>';
-            }
-            $conn->close();
+
+$sql = "SELECT Nazwa, Haslo, Rola, Id FROM pracownicy WHERE Nazwa = '$login'";
+
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $verify = password_verify($haslo, $row['Haslo']);
+
+    if ($verify) {
+        $row = $result->fetch_assoc();
+        $_SESSION['role'] = $row['Rola'];
+        $_SESSION['id'] = $row['Id'];
+        header('Location: Grafik.php');
+        exit();
+    } else {
+        echo "<script> alert('Błędne dane logowania')</script>";
+    }
+    $conn->close();
 ?>
