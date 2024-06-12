@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html, body
+{
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#container
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 100vw;
+}
+
+.NavLeft, .NavRight {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}   
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.FooterOne, .FooterTwo, .FooterThree {
+    padding: 10px;
+}
+
+.FooterTwo iframe {
+    width: 100%;
+    height: 200px; 
+}
+
+.FooterThree img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+section {
+    background-color:  cadetblue;
+    height: 100vh;
+    padding: 10px;
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section h2{
+    text-align: center;
+    font-size: 50px;
+}
+.left{
+    height: auto;
+    padding: 10px;
+    border: 1px solid brown;
+    background-image: linear-gradient(to bottom right, brown, cadetblue);
+}
+
+.right{
+    height: auto;
+    padding: 10px;
+    border: 1px solid brown;
+    background-image: linear-gradient(to bottom right, brown, cadetblue);
+}
+.right table, th, tr,td{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 0 auto;
+}
+.right h2{
+    margin-bottom: 20px;
+}
+
+form {
+    margin: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 200px;
+    padding: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: darkorchid;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: saddlebrown;
+        box-shadow: 5px 5px 2px black;
+    }
+
+
+    @media(max-width: 767px){
+  
+        nav {
+            
+            height: 60px;
+            width: 100vw; 
+            background-color: black;
+            position: fixed;
+            justify-content: center;
+            z-index: 1000;
+    
+        }
+        .NavLeft, .NavRight
+        {
+            display:none;
+        }
+        .sidebar {
+            height: 100%; 
+            width: 0; 
+            position: fixed; 
+            z-index: 1; 
+            top: 0;
+            left: 0;
+            background-color: #111; 
+            overflow-x: hidden; 
+            padding-top: 60px; 
+            transition: 0.5s; 
+          }
+          .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+          }
+          .sidebar a:hover {
+            color: #f1f1f1;
+          }
+          
+          .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+          }
+          .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+          }
+          .openbtn:hover {
+            background-color: #444;
+          }
+          
+          #main {
+            transition: margin-left .5s; 
+            padding: 20px;
+          }
+    
+          @media(max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+          }
+    
+          footer {
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+    
+        .FooterOne, .FooterTwo, .FooterThree {
+            width: 100%;
+            text-align: center;
+        }
+    
+        .FooterTwo iframe {
+            width: 80%;
+            height: 160px; 
+        }
+    
+        .FooterThree img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        section {
+            background-color:  cadetblue;
+            height: 100vh;
+            padding: 10px;
+            padding-top: 100px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+    }
+    
+    @media(min-width: 768px){
+        nav {
+            margin: 0 auto;
+            height: 60px;
+            width: 100vw; 
+            background-color: black;
+            position: fixed;
+            justify-content: space-between;
+    
+        }
+        nav a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+    
+        nav a:hover{
+            color: indianred;
+        }
+        .NavLeft{
+            width: 60vw;
+            justify-content: space-around;
+        }
+        
+        .NavRight{
+            width: 30vw;
+            justify-content: space-around;
+            margin-right: 10px;
+        }
+        .sidebar{
+            display: none;
+        }
+        #main{
+            display: none;
+        }
+        footer {
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+    
+        .FooterOne, .FooterTwo, .FooterThree {
+            width: 100%;
+            text-align: center;
+        }
+    
+        .FooterTwo iframe {
+            width: 50vw;
+            height: 200px; 
+        }
+    
+        .FooterThree img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+    }
+    
+    @media(min-width: 1024px){
+        .NavLeft{
+            width: 40vw;
+            justify-content: space-around;
+        }
+        footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color: black;
+            color: white;
+        }
+        
+        .FooterOne
+        {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 25vw;
+            margin-right: 20px;
+            
+        }
+        
+        .FooterTwo
+        {
+            width: 25vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .FooterTwo iframe
+        {
+            width: 50vw;
+            height: 170px;
+            
+        }
+        
+        .FooterThree
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 25vw;
+            margin-left: 10px;
+        
+        }
+        
+        .FooterThree-top
+        {
+            display: flex;
+            flex-direction: row;
+            width: 25vw;
+        }
+        
+        .FooterThree-bottom
+        {
+            display: flex;
+            flex-direction: row;
+            width: 25vw;
+        }
+        .FooterThree img{
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+    }

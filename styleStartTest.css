@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html, body {
+    font-family: "Roboto", sans-serif;
+    background-image: url("img/backLogin.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin: 0;
+    padding: 0;
+}
+
+@media(max-width: 767px) {
+
+    
+    .logowanie{
+        margin: 0 auto;
+        width: 200px;
+        padding: 30px;
+        margin-bottom: 20px;
+        background-color: inherit;
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        font-style: italic;
+        position: relative;
+        top: 200px;
+        border: 1px solid black;
+        transition: 0.5s;
+    }
+    .logowanie:hover{
+        box-shadow: 20px 20px 7px black;
+    }
+    .logowanie h1{
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 30px;
+        color: wheat;
+    }
+    .bottom{
+        margin-top: 7px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .dane{
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        text-align: center;
+        color: wheat;
+    }
+    .bottom button:hover{
+        background-color: darkorchid;
+        color: white;
+    }
+
+    .bottom button{
+        background-color: black;
+        color: white;
+        height: 30px;
+        width: 100px;
+        padding: 5px;
+        margin-left: 45px;
+    }
+}
+@media(min-width: 768px){
+    .logowanie{
+        margin: 0 auto;
+        width: 300px;
+        padding: 30px;
+        margin-bottom: 20px;
+        background-color: inherit;
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        font-style: italic;
+        position: relative;
+        top: 200px;
+        border: 1px solid black;
+        transition: 0.5s;
+        
+    }
+    .logowanie:hover{
+        box-shadow: 20px 20px 7px black;
+    }
+    .logowanie h1{
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 40px;
+        color: wheat;
+    }
+    .bottom{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .dane{
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        text-align: center;
+        color: wheat;
+    }
+    .bottom a{
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        height: 20px;
+        width: 100px;
+        padding: 5px;
+        text-align: center;
+    }
+    .bottom a:hover{
+        background-color: darkorchid;
+        color: white;
+    }
+    .bottom button:hover{
+        background-color: darkorchid;
+        color: white;
+    }
+
+    .bottom button{
+        background-color: black;
+        color: white;
+        height: 30px;
+        width: 100px;
+        padding: 5px;
+    } 
+}
