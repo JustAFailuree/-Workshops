@@ -181,16 +181,16 @@ session_start();
             </div>
             <div class="FooterThree">
                 <div class="FooterThree-top">
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc">  <img src="img/icons/blip.png" alt="blip"></a>
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/fb.png" alt="fb"></a>
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/link.png" alt="link"></a>
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/pint.png" alt="pint"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck">  <img src="img/icons/blip.png" alt="blip"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/fb.png" alt="fb"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/link.png" alt="link"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/pint.png" alt="pint"></a>
                 </div>
                 <div class="FooterThree-bottom">
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/skype.png" alt="skype"></a>
-                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc">  <img src="img/icons/twit.png" alt="twit"></a>
-                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc">  <img src="img/icons/what.png" alt="what"></a>
-                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/yt.png" alt="yt"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/skype.png" alt="skype"></a>
+                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck">  <img src="img/icons/twit.png" alt="twit"></a>
+                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck">  <img src="img/icons/what.png" alt="what"></a>
+                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/yt.png" alt="yt"></a>
                 </div>
             </div>
         </footer>
