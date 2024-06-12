@@ -68,17 +68,14 @@ session_start();
             </div>
             <button type="submit">Add Order</button>
             <script>
-                document.getElementById('formularz').addEventListener('submit',function(event)
+               document.getElementById('formularz').addEventListener('submit',function(event)
                 {
                     var id = document.getElementById('EmployeeId').value;
                     var data = document.getElementById('Date').value;
                     var czas = document.getElementById('Time').value;
                     var nazwa = document.getElementById('CompanyName').value;
                     var opis = document.getElementById('Description').value;
-                    if(id < 1)
-                    {
-                        alert('Id cannot be less than 1');
-                    }
+                
                     if(id == '' || data == '' || czas == '' || nazwa == '' || opis =='')
                     {
                         event.preventDefault();
@@ -86,7 +83,13 @@ session_start();
                     }
                     else
                     {
-                        alert('Order added');
+                        if(id < 1)
+                        {
+                            alert('Id cannot be less than 1');
+                        }
+                        else{
+                            alert('Order added');
+                        }
                     }
                 });
 
