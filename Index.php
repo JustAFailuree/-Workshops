@@ -131,9 +131,6 @@ session_start();
                                     if(telefon < 9){
                                         alert('Phone number must have 9 characters')
                                     }
-                                    else{
-                                        alert('New user added succesfully');
-                                    }
                                 }
                             }
                         }
@@ -192,8 +189,10 @@ session_start();
             $nick = $conn->real_escape_string($nick);
             $haslo = $conn->real_escape_string($haslo);
 
+            $hashed = password_hash($haslo, PASSWORD_DEFAULT);
+
         
-            $sql = "INSERT INTO pracownicy (Id, Imie, Nazwisko,  Wiek, Telefon, Email, Rola, Nazwa, Haslo) VALUES ('$id','$imie','$nazwisko','$wiek','$telefon','$Email','$rola','$nick','$haslo');";
+            $sql = "INSERT INTO pracownicy (Id, Imie, Nazwisko,  Wiek, Telefon, Email, Rola, Nazwa, Haslo) VALUES ('$id','$imie','$nazwisko','$wiek','$telefon','$Email','$rola','$nick','$hashed');";
             if ($conn->query($sql) === TRUE){
             }
             else{}
@@ -211,16 +210,16 @@ session_start();
             </div>
             <div class="FooterThree">
                 <div class="FooterThree-top">
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck">  <img src="img/icons/blip.png" alt="blip"></a>
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/fb.png" alt="fb"></a>
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/link.png" alt="link"></a>
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/pint.png" alt="pint"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc">  <img src="img/icons/blip.png" alt="blip"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/fb.png" alt="fb"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/link.png" alt="link"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/pint.png" alt="pint"></a>
                 </div>
                 <div class="FooterThree-bottom">
-                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/skype.png" alt="skype"></a>
-                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck">  <img src="img/icons/twit.png" alt="twit"></a>
-                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck">  <img src="img/icons/what.png" alt="what"></a>
-                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc" target="_blanck"> <img src="img/icons/yt.png" alt="yt"></a>
+                <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/skype.png" alt="skype"></a>
+                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc">  <img src="img/icons/twit.png" alt="twit"></a>
+                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc">  <img src="img/icons/what.png" alt="what"></a>
+                   <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc"> <img src="img/icons/yt.png" alt="yt"></a>
                 </div>
             </div>
         </footer>
