@@ -131,6 +131,9 @@ session_start();
                                     if(telefon < 9){
                                         alert('Phone number must have 9 characters')
                                     }
+                                    else{
+                                        alert('New user added succesfully');
+                                    }
                                 }
                             }
                         }
