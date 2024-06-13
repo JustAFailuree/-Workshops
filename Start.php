@@ -14,9 +14,9 @@ session_start();
 <body>
 <div class="logowanie">
             <form method="post">
-                <h1>Login:</h1>
+                <h1>Logowanie</h1>
                 <div class="dane">
-                <label for="Login">User Nick:</label><br>
+                <label for="Login">Username:</label><br>
                 <input type="text" id="Login" name="Login" required><br>
                 <label for="Pass">Password:</label><br>
                 <input type="password" id="Pass" name="Pass" required><br>
