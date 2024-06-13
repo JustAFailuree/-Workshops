@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 html, body
 {
@@ -61,7 +61,8 @@ footer {
 }
 
 section {
-    background-color:  cadetblue;
+    background: rgb(14,0,250);
+    background: linear-gradient(90deg, rgba(14,0,250,1) 0%, rgba(97,97,199,1) 36%, rgba(91,104,202,1) 54%, rgba(87,109,204,1) 70%, rgba(0,212,255,1) 100%);
     height: 100vh;
     padding: 10px;
     padding-top: 50px;
@@ -75,8 +76,10 @@ section {
 .SectionForm{
     height: auto;
     padding: 10px;
-    border: 1px solid brown;
-    background-image: linear-gradient(to bottom right, brown, cadetblue);
+    border: 1px solid rgb(0, 0, 0);
+    color: white;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px 10px black; 
     
 }
 
@@ -126,7 +129,7 @@ input[type="reset"] {
 
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-        background-color: saddlebrown;
+    background-color: rgb(146, 2, 98);
         box-shadow: 5px 5px 2px black;
     }
 
