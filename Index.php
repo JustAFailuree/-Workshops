@@ -192,10 +192,19 @@ session_start();
             $hashed = password_hash($haslo, PASSWORD_DEFAULT);
 
         
-            $sql = "INSERT INTO pracownicy (Id, Imie, Nazwisko,  Wiek, Telefon, Email, Rola, Nazwa, Haslo) VALUES ('$id','$imie','$nazwisko','$wiek','$telefon','$Email','$rola','$nick','$hashed');";
-            if ($conn->query($sql) === TRUE){
+              $check_sql = "SELECT Id, Nazwa FROM pracownicy WHERE Id = '$id' OR Nazwa = '$nick'";
+            $result = $conn->query($check_sql);
+
+            if ($result->num_rows > 0) {
+                echo "<script>alert('Duplicate Id or Nick found')</script>";
+            } else {
+                $sql = "INSERT INTO pracownicy (Id, Imie, Nazwisko, Wiek, Telefon, Email, Rola, Nazwa, Haslo) VALUES ('$id', '$imie', '$nazwisko', '$wiek', '$telefon', '$Email', '$rola', '$nick', '$hashed')";
+                if ($conn->query($sql) === TRUE) {
+                    echo "<script>alert('New employee added successfully')</script>";
+                } else {
+                   
+                }
             }
-            else{}
         }
         $conn->close();
         ?>
