@@ -128,7 +128,7 @@ session_start();
                                     alert('Password must be longer than 6 characters');
                                 }
                                 else{
-                                    if(telefon < 9){
+                                    if(telefon == 9){
                                         alert('Phone number must have 9 characters')
                                     }
                                 }
