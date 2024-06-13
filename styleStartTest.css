@@ -9,6 +9,10 @@ html, body {
     padding: 0;
 }
 
+.logowanie label {
+    padding: 10px;
+}
+
 @media(max-width: 767px) {
 
     
