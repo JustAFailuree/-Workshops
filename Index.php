@@ -103,11 +103,12 @@ session_start();
                     var imie = document.getElementById('imie').value;
                     var nazwisko = document.getElementById('nazwisko').value;
                     var wiek = document.getElementById('wiek').value;
-                    var telefon = document.getElementById('telefon').value;
+                    var telefon = document.getElementById('telefon').value.length;
                     var mail = document.getElementById('mail').value;
                     var nick = document.getElementById('nick').value;
-                    var haslo = document.getElementById('haslo').value;
+                    var haslo = document.getElementById('haslo').value.length;
                    
+
                     if(id == '' || imie == '' || nazwisko == '' || wiek == '' || telefon == '' || mail == '' || nick == '' || haslo == '')
                     {
                         event.preventDefault();
@@ -117,26 +118,32 @@ session_start();
                     {
                         if(id < 1)
                         {
+                            event.preventDefault();
                             alert('Id cannot be less than 1');
                         }
-                        else{
-                            if(wiek < 1)
-                            {
-                                alert('Age cannot be less than 1');
-                            }
-                            else{
-                                if(haslo < 6)
-                                {
-                                    alert('Password must be longer than 6 characters');
-                                }
-                                else{
-                                    if(telefon > 9 || telefon < 9){
-                                        alert('Phone number must have 9 characters')
-                                    }
-                                }
-                            }
+                        
+                        if(wiek < 1)
+                        {
+                            event.preventDefault();
+                            alert('Age cannot be less than 1');
                         }
+                        
+                        if(haslo < 6)
+                        {
+                            event.preventDefault();
+                            alert('Password must be longer than 6 characters');
+                        }
+                                
+                        if(telefon != 9){
+                            event.preventDefault();
+                            alert('Phone number must have 9 characters')
+                        }
+                                
+                        
                     }
+                    
+
+
                 });
 
                 function tylkoLitery(event) 
