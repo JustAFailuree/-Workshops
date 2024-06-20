@@ -16,8 +16,8 @@ session_start();
                 <a href="Grafik.php">Schedule</a>
                 <?php
                 if ($_SESSION["role"] === "A") { ?>
-                <a href="AddOrder.php">Add new order</a>
-                <a href="Index.php">Add new employee</a>
+                <a href="AddOrder.php">Orders</a>
+                <a href="Index.php">Employees</a>
                 <?php } ?>
             </div>
             <div class="NavRight">
@@ -29,8 +29,8 @@ session_start();
                 <?php
                     if ($_SESSION["role"] === "A") { ?>
                     <a href="Grafik.php">Schedule</a>
-                    <a href="AddOrder.php">Add new order</a>
-                    <a href="Index.php">Add new employee</a>
+                    <a href="AddOrder.php">Orders</a>
+                    <a href="Index.php">Employees</a>
                     <a href="logout.php">Logout</a>
                     <?php } ?>
                     <?php
@@ -47,8 +47,8 @@ session_start();
 
     <section>
         <div class="SectionForm">
-            <h2>Contact form:</h2>
-            <form name="name"  id="formularz" method="post">
+            <h2>Add employee:</h2>
+            <form action="addEmployee.php" name="name" id="formularz" method="post">
                 <div class="top">
                 <div class="inside">
                     <label>ID:</label> 
@@ -167,56 +167,75 @@ session_start();
             </script>
         </div>
         
+        <div class="right">
+                <?php
+                    include 'pma.php';
+                    $conn = new mysqli($servername, $username, $password, $dbname);
 
-        <?php
-            include 'pma.php';
-            $conn = new mysqli($servername, $username, $password, $dbname);
+                    $sql = "SELECT Id, Imie, Nazwisko FROM pracownicy";
+                    $result = $conn->query($sql);
 
-            if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-            }
-
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-            $id = $_POST['ID'];
-            $imie = $_POST['Imie'];
-            $nazwisko = $_POST['Nazwisko'];
-            $wiek = $_POST['Wiek'];
-            $telefon = $_POST['Telefon'];
-            $Email = $_POST['Mail'];
-            $rola = $_POST['Role'];
-            $nick = $_POST['Nick'];
-            $haslo = $_POST['Pass'];
-
-            $id = $conn->real_escape_string($id);
-            $imie = $conn->real_escape_string($imie);
-            $nazwisko = $conn->real_escape_string($nazwisko);
-            $wiek = $conn->real_escape_string($wiek);
-            $telefon = $conn->real_escape_string($telefon);
-            $Email = $conn->real_escape_string($Email);
-            $rola = $conn->real_escape_string($rola);
-            $nick = $conn->real_escape_string($nick);
-            $haslo = $conn->real_escape_string($haslo);
-
-            $hashed = password_hash($haslo, PASSWORD_DEFAULT);
-
+                    if ($result->num_rows > 0) {
+                        echo "<h2>Employess:</h2>";
+                        echo "<table>";
+                        echo "<tr><th>ID</th><th>Name</th><th>Last Name</th>";
         
-              $check_sql = "SELECT Id, Nazwa FROM pracownicy WHERE Id = '$id' OR Nazwa = '$nick'";
-            $result = $conn->query($check_sql);
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>
+                                    <td>" . $row["Id"] . "</td>
+                                    <td>" . $row["Imie"] . "</td>
+                                    <td>" . $row["Nazwisko"] . "</td>
+                                </tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                    
+                        echo "null";
+                    }
 
-            if ($result->num_rows > 0) {
-                echo "<script>alert('Duplicate Id or Nick found')</script>";
-            } else {
-                $sql = "INSERT INTO pracownicy (Id, Imie, Nazwisko, Wiek, Telefon, Email, Rola, Nazwa, Haslo) VALUES ('$id', '$imie', '$nazwisko', '$wiek', '$telefon', '$Email', '$rola', '$nick', '$hashed')";
-                if ($conn->query($sql) === TRUE) {
-                    echo "<script>alert('New employee added successfully')</script>";
-                } else {
-                   
-                }
-            }
-        }
-        $conn->close();
-        ?>
+                    $conn->close();
+                ?>
+            </div>
+        </div>
+        
+
+        <div class="formUsuwanie">
+        <h2>Delete employee:</h2>
+            <form action="deleteEmployee.php" name="name"  id="formularz2" method="post">
+            <div class="top">
+                <div class="inside">
+                    <label>ID:</label> 
+                    <input type="number"  id="id2" name="ID2" placeholder="Enter your ID"><br>
+                </div>
+            </div>
+            <div class="bottom">
+                <input type="submit" value="Submit" name="submitUsun" id="submitUsun">
+                <input type="reset" value="Reset" id="resetbuttonUsun" onclick="alert('Your data was cleaned')">
+            </div>
+            </form>
+        </div>
+        <script>
+            document.getElementById('formularz2').addEventListener('submit',function(event2)
+                {
+                    var id = document.getElementById('id2').value;
+
+                    if(id == '')
+                    {
+                        event2.preventDefault();
+                        alert('Fill in all fields');
+                    }
+                    else
+                    {
+                        if(id < 1)
+                        {
+                            event2.preventDefault();
+                            alert('Id cannot be less than 1');
+                        }      
+                        
+                    }
+                });
+        </script>
+        
     </section>
 
     <footer>
