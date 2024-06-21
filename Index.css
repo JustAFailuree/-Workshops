@@ -63,7 +63,7 @@ footer {
 section {
     background: rgb(14,0,250);
     background: linear-gradient(90deg, rgba(14,0,250,1) 0%, rgba(97,97,199,1) 36%, rgba(91,104,202,1) 54%, rgba(87,109,204,1) 70%, rgba(0,212,255,1) 100%);
-    height: 135vh;
+    height: auto;
     padding: 10px;
     padding-top: 50px;
     text-align: center;
@@ -277,6 +277,28 @@ input[type="reset"]:hover {
         width: 20px;
         height: 20px;
         margin-right: 10px;
+    }
+
+    .right{
+        width: 80%;
+        overflow: auto;
+    }
+
+    .right::-webkit-scrollbar{
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+    .right::-webkit-scrollbar-thumb{
+        border-radius: 0.5rem;
+        background-color: #0005;
+        visibility: hidden;
+    }
+    .right:hover::-webkit-scrollbar-thumb{
+        visibility: visible;
+    }
+
+    .right table button{
+        margin-top: 10px;
     }
 
 }
