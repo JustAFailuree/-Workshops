@@ -19,8 +19,8 @@ session_start();
                 <a href="Grafik.php">Schedule</a>
                 <?php
                 if ($_SESSION["role"] === "A") { ?>
-                <a href="AddOrder.php">Add new order</a>
-                <a href="Index.php">Add new employee</a>
+                <a href="AddOrder.php">Orders</a>
+                <a href="Index.php">Employees</a>
                 <?php } ?>
             </div>
             <div class="NavRight">
@@ -32,8 +32,8 @@ session_start();
                 <?php
                     if ($_SESSION["role"] === "A") { ?>
                     <a href="Grafik.php">Schedule</a>
-                    <a href="AddOrder.php">Add new order</a>
-                    <a href="Index.php">Add new employee</a>
+                    <a href="AddOrder.php">Orders</a>
+                    <a href="Index.php">Employees</a>
                     <a href="logout.php">Logout</a>
                     <?php } ?>
                     <?php
